@@ -7,6 +7,9 @@
 
 using namespace std;
 
+
+
+
 struct Node {
     int x, y;
     int gCost, hCost;
@@ -75,7 +78,10 @@ void astarPathFind(vector<vector<Proje>> &vProje) {
         if (here != 'S' && here != 'G' && here != 'X') {
             vProje[current->x][current->y].setYazi('.');
             matrisYazdir(vProje);
-            this_thread::sleep_for(chrono::milliseconds(800));
+             double bekleme = 8 / Boyut;  
+            if (bekleme > 2.0) bekleme = 1.5; 
+            if (bekleme < 0.5) bekleme = 0.5; 
+             this_thread::sleep_for(chrono::duration<double>(bekleme));
         }
 
         for (auto [dx, dy] : dirs) {
@@ -109,7 +115,11 @@ void astarPathFind(vector<vector<Proje>> &vProje) {
         if (vProje[p->x][p->y].getYazi() != 'S' && vProje[p->x][p->y].getYazi() != 'G') {
             vProje[p->x][p->y].setYazi('1');
             matrisYazdir(vProje);
-            this_thread::sleep_for(chrono::milliseconds(500));
+
+        double bekleme = 8 / Boyut;  
+        if (bekleme > 2.0) bekleme = 1.5; 
+        if (bekleme < 0.5) bekleme = 0.5; 
+        this_thread::sleep_for(chrono::duration<double>(bekleme));
         }
         p = p->parent;
     }
