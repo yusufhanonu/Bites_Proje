@@ -20,7 +20,7 @@ int main() {
     matrisEngelAtama(vProje);
 
     cout << endl << "A* algoritması başlatılıyor..." <<endl; 
-    this_thread::sleep_for(chrono::seconds(1));
+    this_thread::sleep_for(chrono::seconds(2));
     astarPathFind(vProje);
 
     cout << "--Sonuc---";
