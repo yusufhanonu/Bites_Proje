@@ -75,7 +75,7 @@ void astarPathFind(vector<vector<Proje>> &vProje) {
         if (here != 'S' && here != 'G' && here != 'X') {
             vProje[current->x][current->y].setYazi('.');
             matrisYazdir(vProje);
-            this_thread::sleep_for(chrono::milliseconds(1000));
+            this_thread::sleep_for(chrono::milliseconds(800));
         }
 
         for (auto [dx, dy] : dirs) {
@@ -109,7 +109,7 @@ void astarPathFind(vector<vector<Proje>> &vProje) {
         if (vProje[p->x][p->y].getYazi() != 'S' && vProje[p->x][p->y].getYazi() != 'G') {
             vProje[p->x][p->y].setYazi('1');
             matrisYazdir(vProje);
-            this_thread::sleep_for(chrono::milliseconds(1000));
+            this_thread::sleep_for(chrono::milliseconds(500));
         }
         p = p->parent;
     }
