@@ -2,4 +2,4 @@
 #include <vector>
 #include "Proje.h"
 
-void astarPathFind(vector<vector<Proje>> &vProje);
+void astarPathFind(vector<vector<Proje> > &vProje);

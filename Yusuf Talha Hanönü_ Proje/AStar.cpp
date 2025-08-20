@@ -70,7 +70,7 @@ void astarPathFind(vector<vector<Proje>> &vProje) {
             endNode = current;
             break;
         }
-
+        
         char here = vProje[current->x][current->y].getYazi();
         if (here != 'S' && here != 'G' && here != 'X') {
             vProje[current->x][current->y].setYazi('.');
